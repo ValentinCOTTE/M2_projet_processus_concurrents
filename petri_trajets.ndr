@@ -1,93 +1,76 @@
-p 30.0 740.0 p0 1 n
-p 265.0 740.0 p2 0 n
-t 155.0 740.0 t0 c 470 470 n 7h50 ne
-t 75.0 930.0 t1 c 0 10 w Alice_train n
-p 155.0 835.0 p1 0 w
-t 220.0 925.0 t2 c 0 10 w Alice_marche n
-p 220.0 1025.0 p4 0 w
-p 75.0 1025.0 p3 0 w
-t 75.0 1095.0 t4 5 5 w
-p 75.0 1160.0 p5 0 w
-t 75.0 1220.0 t6 5 15 w
-t 220.0 1140.0 t5 20 30 w
-p 140.0 1345.0 p7 0 n Universite_Alice e
-t 480.0 125.0 t7 c 0 10 w Bob_voiture n
-p 560.0 30.0 p8 0 w
-t 480.0 290.0 t9 30 40 w
-p 480.0 355.0 p11 0 w
-t 480.0 415.0 t10 5 10 w
-t 630.0 290.0 t11 50 50 w
-p 630.0 355.0 p13 0 w
-t 630.0 415.0 t12 5 10 w
-p 480.0 205.0 p10 0 w
-p 630.0 205.0 p9 0 w
-t 630.0 120.0 t8 c 0 10 w Bob_tram n
-t 365.0 740.0 t3 c 20 20 n 8h10 ne
-t 695.0 930.0 t13 c 0 10 w Claire_marche n
-p 775.0 835.0 p14 0 w
-t 695.0 1095.0 t14 15 20 w
-t 845.0 1095.0 t16 5 5 w
-p 845.0 1160.0 p17 0 w
-t 845.0 1220.0 t17 5 10 w
-p 695.0 1010.0 p18 0 w
-p 845.0 1010.0 p19 0 w
-t 845.0 925.0 t18 c 0 10 w Claire_velo n
-p 560.0 540.0 p12 0 n Universite_Bob e
-p 780.0 1335.0 p16 0 n Universite_Bob e
-p 365.0 635.0 p21 0 n
-t 450.0 635.0 t19 10 10 n
-t 810.0 745.0 t15 0 w n
-p 565.0 635.0 p22 0 n Retard_universite_Bob e
-p 675.0 725.0 p6 0 n
-p 580.0 785.0 p15 0 n
-e t1 p15 1 n
-e t2 p15 1 n
-e p15 t15 1 n
-e p6 t15 1 n
-e t8 0.9352641933 283.0971565 p6 0.07379180882 386.8397601 1 n
-e t7 0.9826327087 431.5669125 p6 0.1129136723 260.9674309 1 n
-e t15 p14 1 n
-e p0 t0 1 n
-e t0 p1 1 n
-e p1 t1 1 n
-e p1 t2 1 n
-e t0 p2 1 n
-e p2 t3 1 n
-e t1 p3 1 n
-e t2 p4 1 n
+p 30.0 50.0 p0 1 n
+p 265.0 50.0 p2 0 n
+t 155.0 50.0 t0 c 470 470 n 7h50 ne
+p 155.0 150.0 p1 0 w
+t 75.0 410.0 t4 c 5 5 w Alice_train ne
+p 75.0 475.0 p5 0 w
+t 75.0 535.0 t6 5 15 w
+p 140.0 660.0 p7 0 n Universite_Alice e
+p 955.0 380.0 p11 0 w
+t 955.0 440.0 t10 5 10 w
+t 1105.0 315.0 t11 c 50 50 w Bob_tram ne
+p 1105.0 380.0 p13 0 w
+t 365.0 50.0 t3 c 20 20 n 8h10 ne
+t 420.0 370.0 t13 c 15 20 w Claire_marche n
+p 500.0 275.0 p14 0 w
+t 570.0 535.0 t16 5 10 w
+p 570.0 450.0 p19 0 w
+t 570.0 365.0 t18 c 5 5 w Claire_velo n
+p 475.0 50.0 p21 0 n
+t 560.0 50.0 t19 c -11 -12 n {>8h20} ne
+t 1105.0 440.0 t12 5 10 w
+p 510.0 645.0 p16 0 n Universite_Claire e
+t 535.0 185.0 t15 10 20 n
+t 220.0 455.0 t5 c 20 30 w Alice_marche ne
+p 150.0 315.0 p3 0 w
+t 155.0 235.0 t1 c 0 10 w {Alice_départ} ne
+p 1030.0 200.0 p9 0 w
+t 955.0 315.0 t9 c 30 40 w Bob_voiture ne
+t 1020.0 100.0 t8 0 w n
+p 920.0 100.0 p4 1 n
+p 635.0 185.0 p6 0 n
+p 440.0 185.0 p15 0 n
+p 1025.0 510.0 p8 0 n
+t 955.0 635.0 t23 0 w n
+p 1045.0 635.0 p12 0 n Universite_Bob e
+e t23 p12 1 n
+e p21 0.9456468636 400.1062359 t23 0.3593592146 189.1799738 1 n
+e p8 t23 1 n
+e t12 p8 1 n
+e t10 p8 1 n
+e p4 t8 1 n
+e p9 t9 1 n
+e p3 t5 1 n
 e p3 t4 1 n
-e p4 t5 1 n
-e t4 p5 1 n
-e p5 t6 1 n
-e t6 p7 1 n
-e t5 p7 1 n
-e t10 p12 1 n
-e p11 t10 1 n
-e t9 p11 1 n
-e p9 t11 1 n
-e p10 t9 1 n
-e t8 p9 1 n
-e t7 p10 1 n
-e p8 t8 1 n
-e p8 t7 1 n
-e t11 p13 1 n
-e p13 t12 1 n
-e t12 p12 1 n
-e t17 p16 1 n
-e p17 t17 1 n
-e t16 p17 1 n
-e p14 t13 1 n
-e p14 t18 1 n
-e t13 p18 1 n
-e t18 p19 1 n
-e p18 t14 1 n
-e p19 t16 1 n
-e t14 p16 1 n
-e t3 p21 1 n
+e t1 p3 1 n
+e t16 p16 1 n
+e t13 p16 1 n
 e p21 t19 1 n
-e p21 t10 1 n
-e p21 t12 1 n
-e t19 p22 1 n
+e t3 p21 1 n
+e p19 t16 1 n
+e t18 p19 1 n
+e p14 t18 1 n
+e p14 t13 1 n
+e p13 t12 1 n
+e t11 p13 1 n
+e t8 p9 1 n
+e p9 t11 1 n
+e t9 p11 1 n
+e p11 t10 1 n
+e t5 p7 1 n
+e t6 p7 1 n
+e p5 t6 1 n
+e t4 p5 1 n
+e p2 t3 1 n
+e t0 p2 1 n
+e p1 t1 1 n
+e t0 p1 1 n
+e p0 t0 1 n
+e t15 p14 1 n
+e t8 0.5849422969 102.2154587 p6 0.9974739432 189.023808 1 n
+e p6 t15 1 n
+e p15 t15 1 n
+e t1 p15 1 n
 h petri_trajets
 
 

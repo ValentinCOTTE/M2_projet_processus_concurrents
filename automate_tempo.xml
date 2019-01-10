@@ -7,21 +7,22 @@ chan bob, alice, claire;</declaration>
 	<template>
 		<name x="5" y="5">Alice</name>
 		<declaration>// Place local declarations here.
-clock x;</declaration>
-		<location id="id0" x="195" y="-25">
-			<name x="186" y="-58">universite</name>
+clock x;
+bool bus_flag:=false;</declaration>
+		<location id="id0" x="246" y="-25">
+			<name x="237" y="-58">universite</name>
 		</location>
-		<location id="id1" x="85" y="25">
-			<name x="75" y="-9">bus</name>
-			<label kind="invariant" x="68" y="42">x&lt;=15</label>
+		<location id="id1" x="136" y="25">
+			<name x="126" y="-9">bus</name>
+			<label kind="invariant" x="119" y="42">x&lt;=15</label>
 		</location>
 		<location id="id2" x="-25" y="25">
 			<name x="-34" y="-8">marche</name>
 			<label kind="invariant" x="-42" y="42">x&lt;=5</label>
 		</location>
-		<location id="id3" x="59" y="-76">
-			<name x="49" y="-110">train</name>
-			<label kind="invariant" x="34" y="-59">x&lt;=30</label>
+		<location id="id3" x="110" y="-76">
+			<name x="100" y="-110">train</name>
+			<label kind="invariant" x="85" y="-59">x&lt;=30</label>
 		</location>
 		<location id="id4" x="-93" y="-42">
 			<name x="-127" y="-76">maison</name>
@@ -38,176 +39,180 @@ clock x;</declaration>
 		<transition>
 			<source ref="id1"/>
 			<target ref="id0"/>
-			<label kind="guard" x="119" y="8">x&gt;=5</label>
+			<label kind="guard" x="170" y="8">x&gt;=5</label>
 		</transition>
 		<transition>
 			<source ref="id2"/>
 			<target ref="id1"/>
 			<label kind="guard" x="-8" y="8">x==5</label>
-			<label kind="assignment" x="34" y="25">x:=0</label>
+			<label kind="assignment" x="-8" y="25">x:=0,bus_flag:=true</label>
 		</transition>
 		<transition>
 			<source ref="id3"/>
 			<target ref="id0"/>
-			<label kind="guard" x="93" y="-85">x&gt;=20</label>
+			<label kind="guard" x="144" y="-85">x&gt;=20</label>
 		</transition>
 		<transition>
 			<source ref="id4"/>
 			<target ref="id3"/>
 			<label kind="guard" x="-59" y="-93">h&gt;=7*60+50</label>
 			<label kind="synchronisation" x="-68" y="-76">alice!</label>
-			<label kind="assignment" x="-17" y="-59">x:=0</label>
-		</transition>
-	</template>
-	<template>
-		<name>Bob</name>
-		<declaration>clock x;</declaration>
-		<location id="id5" x="76" y="8">
-			<name x="42" y="-25">marche</name>
-			<label kind="invariant" x="66" y="25">x&lt;=10</label>
-		</location>
-		<location id="id6" x="-68" y="8">
-			<name x="-78" y="-26">tram</name>
-			<label kind="invariant" x="-78" y="25">x&lt;=50</label>
-		</location>
-		<location id="id7" x="76" y="-93">
-			<name x="66" y="-127">parking</name>
-			<label kind="invariant" x="66" y="-76">x&lt;=10</label>
-		</location>
-		<location id="id8" x="-68" y="-93">
-			<name x="-78" y="-127">voiture</name>
-			<label kind="invariant" x="-78" y="-76">x&lt;=40</label>
-		</location>
-		<location id="id9" x="170" y="-42">
-			<name x="160" y="-76">universite</name>
-		</location>
-		<location id="id10" x="-170" y="-51">
-			<name x="-238" y="-68">maison</name>
-		</location>
-		<init ref="id10"/>
-		<transition>
-			<source ref="id10"/>
-			<target ref="id6"/>
-			<label kind="synchronisation" x="-127" y="-42">bob!</label>
-			<label kind="assignment" x="-152" y="-21">x:=0</label>
-		</transition>
-		<transition>
-			<source ref="id6"/>
-			<target ref="id5"/>
-			<label kind="guard" x="-51" y="-8">x==50</label>
-			<label kind="assignment" x="0" y="8">x:=0</label>
-		</transition>
-		<transition>
-			<source ref="id5"/>
-			<target ref="id9"/>
-			<label kind="guard" x="127" y="-17">x&gt;=5
-and
-h&gt;=8*60+10
-and
-h&lt;=8*+60+20</label>
-		</transition>
-		<transition>
-			<source ref="id7"/>
-			<target ref="id9"/>
-			<label kind="guard" x="127" y="-170">x&gt;=5
-and
-h&gt;=8*60+10
-and
-h&lt;=8*+60+20</label>
-		</transition>
-		<transition>
-			<source ref="id8"/>
-			<target ref="id7"/>
-			<label kind="guard" x="-51" y="-110">x&gt;=30</label>
-			<label kind="assignment" x="17" y="-93">x:=0</label>
-		</transition>
-		<transition>
-			<source ref="id10"/>
-			<target ref="id8"/>
-			<label kind="synchronisation" x="-152" y="-89">bob!</label>
-			<label kind="assignment" x="-127" y="-68">x:=0</label>
+			<label kind="assignment" x="34" y="-68">x:=0</label>
 		</transition>
 	</template>
 	<template>
 		<name>Claire</name>
-		<declaration>clock x;</declaration>
-		<location id="id11" x="-272" y="59">
+		<declaration>clock x;
+bool velo_flag:=false;</declaration>
+		<location id="id5" x="-272" y="59">
 		</location>
-		<location id="id12" x="-314" y="-17">
+		<location id="id6" x="-314" y="-17">
 		</location>
-		<location id="id13" x="-450" y="17">
+		<location id="id7" x="-450" y="17">
 			<name x="-460" y="-17">maison</name>
 		</location>
-		<location id="id14" x="68" y="85">
-			<name x="42" y="51">gare</name>
-			<label kind="invariant" x="58" y="102">x&lt;=10</label>
+		<location id="id8" x="136" y="77">
+			<name x="110" y="43">gare</name>
+			<label kind="invariant" x="126" y="94">x&lt;=10</label>
 		</location>
-		<location id="id15" x="0" y="-51">
-			<name x="-8" y="-85">marche</name>
-			<label kind="invariant" x="-10" y="-34">x&lt;=20</label>
+		<location id="id9" x="68" y="-59">
+			<name x="60" y="-93">marche</name>
+			<label kind="invariant" x="58" y="-42">x&lt;=20</label>
 		</location>
-		<location id="id16" x="161" y="8">
-			<name x="151" y="-26">universite</name>
+		<location id="id10" x="229" y="0">
+			<name x="219" y="-34">universite</name>
 		</location>
-		<location id="id17" x="-76" y="85">
-			<name x="-86" y="51">velo</name>
-			<label kind="invariant" x="-86" y="102">x&lt;=5</label>
+		<location id="id11" x="-8" y="77">
+			<name x="-18" y="43">velo</name>
+			<label kind="invariant" x="-18" y="94">x&lt;=5</label>
 		</location>
-		<location id="id18" x="-178" y="8">
+		<location id="id12" x="-178" y="8">
 			<name x="-188" y="-26">pret</name>
 			<label kind="invariant" x="-195" y="25">x&lt;=20</label>
 		</location>
-		<init ref="id13"/>
+		<init ref="id7"/>
 		<transition>
-			<source ref="id12"/>
-			<target ref="id18"/>
+			<source ref="id6"/>
+			<target ref="id12"/>
 			<label kind="synchronisation" x="-262" y="-25">alice?</label>
 			<label kind="assignment" x="-289" y="-8">x:=0</label>
 		</transition>
 		<transition>
-			<source ref="id11"/>
-			<target ref="id18"/>
+			<source ref="id5"/>
+			<target ref="id12"/>
 			<label kind="synchronisation" x="-263" y="25">bob?</label>
 			<label kind="assignment" x="-246" y="42">x:=0</label>
 		</transition>
 		<transition>
-			<source ref="id13"/>
-			<target ref="id11"/>
+			<source ref="id7"/>
+			<target ref="id5"/>
 			<label kind="synchronisation" x="-425" y="34">alice?</label>
 		</transition>
 		<transition>
-			<source ref="id13"/>
-			<target ref="id12"/>
+			<source ref="id7"/>
+			<target ref="id6"/>
 			<label kind="synchronisation" x="-382" y="-25">bob?</label>
 		</transition>
 		<transition>
-			<source ref="id18"/>
-			<target ref="id17"/>
-			<label kind="guard" x="-153" y="8">x&gt;=10</label>
-			<label kind="assignment" x="-136" y="59">x:=0</label>
+			<source ref="id12"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-136" y="8">x&gt;=10</label>
+			<label kind="assignment" x="-153" y="68">x:=0,velo_flag:=true</label>
 		</transition>
 		<transition>
-			<source ref="id17"/>
+			<source ref="id11"/>
+			<target ref="id8"/>
+			<label kind="guard" x="17" y="60">x==5</label>
+			<label kind="assignment" x="60" y="77">x:=0</label>
+			<nail x="9" y="77"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id10"/>
+			<label kind="guard" x="161" y="17">x&gt;=5</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="guard" x="93" y="-76">x&gt;=15</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-144" y="-34">x&gt;=10</label>
+			<label kind="assignment" x="-8" y="-33">x:=0</label>
+		</transition>
+	</template>
+	<template>
+		<name>Bob</name>
+		<declaration>clock x;
+clock u;</declaration>
+		<location id="id13" x="76" y="8">
+			<name x="42" y="-25">marche</name>
+			<label kind="invariant" x="66" y="25">x&lt;=10</label>
+		</location>
+		<location id="id14" x="-68" y="8">
+			<name x="-78" y="-26">tram</name>
+			<label kind="invariant" x="-78" y="25">x&lt;=50</label>
+		</location>
+		<location id="id15" x="76" y="-93">
+			<name x="66" y="-127">parking</name>
+			<label kind="invariant" x="66" y="-76">x&lt;=10</label>
+		</location>
+		<location id="id16" x="-68" y="-93">
+			<name x="-78" y="-127">voiture</name>
+			<label kind="invariant" x="-78" y="-76">x&lt;=40</label>
+		</location>
+		<location id="id17" x="170" y="-42">
+			<name x="160" y="-76">universite</name>
+		</location>
+		<location id="id18" x="-170" y="-51">
+			<name x="-238" y="-68">maison</name>
+		</location>
+		<init ref="id18"/>
+		<transition>
+			<source ref="id18"/>
 			<target ref="id14"/>
-			<label kind="guard" x="-51" y="68">x==5</label>
-			<label kind="assignment" x="-8" y="85">x:=0</label>
-			<nail x="-59" y="85"/>
+			<label kind="synchronisation" x="-127" y="-42">bob!</label>
+			<label kind="assignment" x="-152" y="-21">x:=0</label>
 		</transition>
 		<transition>
 			<source ref="id14"/>
-			<target ref="id16"/>
-			<label kind="guard" x="93" y="25">x&gt;=5</label>
+			<target ref="id13"/>
+			<label kind="guard" x="-51" y="-8">x==50</label>
+			<label kind="assignment" x="0" y="8">x:=0</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id17"/>
+			<label kind="guard" x="127" y="-17">x&gt;=5
+and
+h&gt;=8*60+10
+and
+h&lt;=8*60+20</label>
+			<label kind="assignment" x="93" y="-8">u:=0</label>
 		</transition>
 		<transition>
 			<source ref="id15"/>
-			<target ref="id16"/>
-			<label kind="guard" x="25" y="-68">x&gt;=15</label>
+			<target ref="id17"/>
+			<label kind="guard" x="127" y="-170">x&gt;=5
+and
+h&gt;=8*60+10
+and
+h&lt;=8*60+20</label>
+			<label kind="assignment" x="110" y="-59">u:=0</label>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-51" y="-110">x&gt;=30</label>
+			<label kind="assignment" x="17" y="-93">x:=0</label>
 		</transition>
 		<transition>
 			<source ref="id18"/>
-			<target ref="id15"/>
-			<label kind="guard" x="-144" y="-34">x&gt;=10</label>
-			<label kind="assignment" x="-76" y="-25">x:=0</label>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-152" y="-89">bob!</label>
+			<label kind="assignment" x="-127" y="-68">x:=0</label>
 		</transition>
 	</template>
 	<system>// Place template instantiations here.
@@ -217,9 +222,93 @@ system Alice,Bob,Claire;
     </system>
 	<queries>
 		<query>
-			<formula>(E&lt;&gt; Bob.universite and Alice.universite and Claire.universite) and (E&lt;&gt;Alice.bus) and (E&lt;&gt;Claire.velo)
+			<formula>((Bob.tram or Bob.voiture) and Bob.x==0 and (h&lt;430 or h&gt;465) )--&gt;(not Bob.universite and h&gt;500) or ((Bob.parking or Bob.marche) and Bob.x==10 and h&lt;490)
 			</formula>
 			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>((Bob.tram or Bob.voiture) and Bob.x==0 and (h&lt;430 or h&gt;465) )--&gt;Bob.universite and Claire.universite and Alice.universite and (h-Bob.u&lt;490 or h-Bob.u&gt;500)
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>((Bob.tram or Bob.voiture) and Bob.x==0 and h&lt;431 )--&gt;(Bob.parking or Bob.marche) and Bob.x==10 and h&lt;490
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>((Bob.tram or Bob.voiture) and Bob.x==0 and h&lt;430 )--&gt;(Bob.parking or Bob.marche) and Bob.x==10 and h&lt;490
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>((Bob.tram or Bob.voiture) and Bob.x==0 and h&gt;464 )--&gt;not Bob.universite and h&gt;500
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>((Bob.tram or Bob.voiture) and Bob.x==0 and h&gt;465 )--&gt;not Bob.universite and h&gt;500
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>(Bob.tram and Bob.x==0 and h&gt;=430 and h&lt;=440) --&gt;Bob.universite and Alice.universite and Claire.universite
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;(Bob.universite and Alice.universite and Claire.universite)
+			</formula>
+			<comment>Question 1
+			</comment>
+		</query>
+		<query>
+			<formula>Claire.velo --&gt; not Alice.bus
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>Alice.bus --&gt; not Claire.velo
+			</formula>
+			<comment>
+			</comment>
+		</query>
+		<query>
+			<formula>A[] not(Bob.universite and Alice.universite and Claire.universite)
+			</formula>
+			<comment>Question 1
+			</comment>
+		</query>
+		<query>
+			<formula>A[] not((Bob.universite and Claire.universite and Alice.universite) and Alice.bus_flag==true and Claire.velo_flag==true)
+			</formula>
+			<comment>Question 2
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;(Bob.universite and Claire.universite and Alice.universite) and Alice.bus_flag==true and Claire.velo_flag==true
+			</formula>
+			<comment>Question 2
+			</comment>
+		</query>
+		<query>
+			<formula>A[] not(Alice.bus and Claire.velo and Bob.universite)
+			</formula>
+			<comment>Question 2 (v1)
+			</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt;Alice.bus and Claire.velo and Bob.universite
+			</formula>
+			<comment>Question 2 (v1)
 			</comment>
 		</query>
 	</queries>
