@@ -1,0 +1,131 @@
+t 640.0 745.0 tb3 5 10 w
+p 175.0 390.0 depart_alice 0 w
+t 640.0 610.0 tb2 30 40 w
+p 735.0 395.0 depart_bob 0 w
+t 735.0 320.0 tb0 0 w n
+p 40.0 50.0 0h00_7h00 1 s Observer n
+p 780.0 50.0 8h00_8h10 0 s
+t 1205.0 50.0 to3 c 10 10 s 8h20 n
+p 1055.0 50.0 8h10_8h20 0 s
+t 915.0 50.0 to2 c 10 10 s 8h10 n
+t 640.0 50.0 to1 c 10 10 s 8h00 n
+p 510.0 50.0 7h50_8h00 0 s
+p 175.0 255.0 alice_maison 1 w Alice n
+t 175.0 320.0 ta0 0 w n
+t 255.0 455.0 ta3 0 0 w
+p 95.0 525.0 alice_train 0 w
+t 95.0 590.0 ta2 20 30 w
+t 255.0 590.0 ta4 5 5 w
+p 175.0 795.0 arrivee_alice 0 w
+t 175.0 860.0 ta6 0 0 w
+p 175.0 930.0 univ_alice 0 w
+p 1020.0 535.0 claire_pied 0 w
+p 825.0 535.0 bob_tram 0 w
+t 825.0 465.0 tb4 0 0 w
+t 640.0 465.0 tb1 0 0 w
+p 735.0 800.0 arrivee_bob 0 w
+t 735.0 870.0 tb7 0 0 w
+p 735.0 940.0 univ_bob 0 w
+p 825.0 680.0 bob_marche_tram 0 w
+t 825.0 745.0 tb6 5 10 w
+t 1020.0 465.0 tc1 0 0 w
+t 1120.0 330.0 tc0 0 w n
+t 1210.0 460.0 tc3 0 0 w
+p 1210.0 525.0 claire_velo 0 w
+t 1020.0 600.0 tc2 15 20 w
+p 1105.0 940.0 univ_claire 0 w
+t 1105.0 870.0 tc6 0 0 w
+p 1105.0 800.0 arrivee_claire 0 w
+p 255.0 660.0 alice_bus 0 w
+p 255.0 525.0 alice_marche 0 w
+t 255.0 735.0 ta5 5 15 w
+t 420.0 385.0 td0 c 10 10 e {Départ_observer} n
+p 420.0 450.0 10_20 0 e
+t 420.0 520.0 td1 10 10 e
+t 825.0 610.0 tb5 50 50 w
+p 640.0 535.0 bob_voiture 0 w
+p 640.0 680.0 bob_marche_voit 0 w
+t 1210.0 595.0 tc4 5 5 w
+p 1210.0 660.0 claire_marche 0 w
+t 1210.0 725.0 tc5 5 10 w
+t 95.0 455.0 ta1 0 0 w
+p 735.0 255.0 bob_maison 1 w Bob n
+p 1120.0 270.0 claire_maison 1 w Claire n
+p 295.0 320.0 alice_partie 0 e
+p 555.0 320.0 { bob_parti} 0 w
+p 1120.0 400.0 depart_claire 0 w
+p 275.0 155.0 7h_7h09 0 n
+p 615.0 155.0 7h46_passe 0 n
+t 395.0 50.0 to0 c 50 50 s 7h50 n
+t 140.0 50.0 t3 c 420 420 s 7h n
+p 275.0 50.0 7h_7h50 0 n
+t 370.0 155.0 t4 9 9 n
+p 445.0 155.0 7h09_7h46 0 n
+t 535.0 155.0 t2 37 37 n
+e t4 7h09_7h46 1 n
+e 7h_7h09 t4 1 n
+e 7h_7h50 to0 1 n
+e t3 7h_7h50 1 n
+e t3 7h_7h09 1 n
+e 0h00_7h00 t3 1 n
+e t2 7h46_passe 1 n
+e 7h09_7h46 t2 1 n
+e tc0 depart_claire 1 n
+e alice_maison ta0 1 n
+e to0 7h50_8h00 1 n
+e ta1 alice_train 1 n
+e alice_train ta2 1 n
+e bob_marche_voit tb3 1 n
+e tb2 bob_marche_voit 1 n
+e tb0 depart_bob 1 n
+e tb5 bob_marche_tram 1 n
+e bob_marche_tram tb6 1 n
+e depart_claire tc1 1 n
+e depart_claire tc3 1 n
+e claire_marche tc5 1 n
+e to2 8h10_8h20 1 n
+e 8h10_8h20 to3 1 n
+e tc5 arrivee_claire 1 n
+e ta0 depart_alice 1 n
+e bob_maison tb0 1 n
+e tb3 arrivee_bob 1 n
+e tb6 arrivee_bob 1 n
+e arrivee_bob tb7 1 n
+e tb7 univ_bob 1 n
+e arrivee_alice ta6 1 n
+e ta6 univ_alice 1 n
+e arrivee_claire tc6 1 n
+e tc6 univ_claire 1 n
+e claire_maison tc0 1 n
+e 7h50_8h00 to1 1 n
+e to1 8h00_8h10 1 n
+e 8h00_8h10 to2 1 n
+e depart_alice ta1 1 n
+e depart_alice ta3 1 n
+e ta2 arrivee_alice 1 n
+e ta5 arrivee_alice 1 n
+e tc1 claire_pied 1 n
+e depart_bob tb1 1 n
+e tb1 bob_voiture 1 n
+e bob_voiture tb2 1 n
+e tb4 bob_tram 1 n
+e bob_tram tb5 1 n
+e depart_bob tb4 1 n
+e tc3 claire_velo 1 n
+e claire_velo tc4 1 n
+e tc4 claire_marche 1 n
+e claire_pied tc2 1 n
+e tc2 arrivee_claire 1 n
+e ta3 alice_marche 1 n
+e alice_marche ta4 1 n
+e ta4 alice_bus 1 n
+e alice_bus ta5 1 n
+e alice_partie td0 1 n
+e td0 10_20 1 n
+e 10_20 td1 1 n
+e ta0 alice_partie 1 n
+e tb0 { bob_parti} 1 n
+e { bob_parti} td0 1 n
+h petri_trajets
+
+
