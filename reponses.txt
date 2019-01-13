@@ -1,18 +1,18 @@
 Q1 :
 - (
-	(<>(univ_bob /\ univ_alice /\ univ_claire )) 
-	/\ (<> (depart_alice /\ 7h_8h)) 
-	/\ (<> (arrivee_bob/\ 8h10_8h20)) 
-	/\ (<> (depart_claire /\ 10_20 ))
+	<>(univ_bob /\ univ_alice /\ univ_claire )
+	/\ <> (depart_alice /\ 7h00_8h00) 
+	/\ <> (arrivee_bob/\ 8h10_8h20) 
+	/\ <> (depart_claire /\ 10_20 )
 )
 
 Q2:
 - (
 	( 
-		(<>(univ_bob /\ univ_alice /\ univ_claire )) 
-		/\ (<> (depart_alice /\ 7h_8h)) 
-		/\ (<> (arrivee_bob/\ 8h10_8h20)) 
-		/\ (<> (depart_claire /\ 10_20 ))
+		<>(univ_bob /\ univ_alice /\ univ_claire ) 
+		/\ <> (depart_alice /\ 7h00_8h00) 
+		/\ <> (arrivee_bob /\ 8h10_8h20) 
+		/\ <> (depart_claire /\ 10_20)
 	) 
 	/\ ((<>alice_bus )/\ (<>claire_velo)) 
 )

@@ -1,0 +1,56 @@
+C:\Users\Valentin COTTE\Dropbox\M2\Processus concurrents\Projet>selt petri_trajets.ktz -p
+Selt version 3.4.4 -- 01/05/16 -- LAAS/CNRS
+ktz loaded, 243482 states, 709688 transitions
+0.312s
+
+- -(<>(univ_bob /\ univ_alice /\ univ_claire) /\ <>(depart_alice /\ 7h50_8h00) /\ <>(arrivee_bob /\ 8h10_8h20) /\ <>(depart_claire /\ 10_20) /\ <>alice_bus /\ <>claire_velo);
+FALSE
+  state 0: 0h00_7h50 alice_maison bob_maison claire_maison
+  -tb0->
+  state 138480: { bob_parti} 0h00_7h50 alice_maison claire_maison depart_bob
+  -tb1->
+  state 138481: { bob_parti} 0h00_7h50 alice_maison bob_voiture claire_maison
+  -ta0->
+  state 138482: { bob_parti} 0h00_7h50 alice_partie bob_voiture claire_maison depart_alice
+  -to0->
+  state 270718: { bob_parti} 7h50_8h00 alice_partie bob_voiture claire_maison depart_alice
+  -ta3->
+  state 278827: { bob_parti} 7h50_8h00 alice_marche alice_partie bob_voiture claire_maison
+  -ta4->
+  state 278828: { bob_parti} 7h50_8h00 alice_bus alice_partie bob_voiture claire_maison
+  -to1->
+  state 278829: { bob_parti} 8h00_8h10 alice_bus alice_partie bob_voiture claire_maison
+  -tc0->
+  state 279021: { bob_parti} 8h00_8h10 alice_bus alice_partie bob_voiture depart_claire
+  -tb2->
+  state 279022: { bob_parti} 8h00_8h10 alice_bus alice_partie bob_marche_voit depart_claire
+  -td0->
+  state 279023: 10_20 8h00_8h10 alice_bus bob_marche_voit depart_claire
+  -ta5->
+  state 279299: 10_20 8h00_8h10 arrivee_alice bob_marche_voit depart_claire
+  -ta6->
+  state 279300: 10_20 8h00_8h10 bob_marche_voit depart_claire univ_alice
+  -tc3->
+  state 279321: 10_20 8h00_8h10 bob_marche_voit claire_velo univ_alice
+  -tc4->
+  state 279366: 10_20 8h00_8h10 bob_marche_voit claire_marche univ_alice
+  -tc5->
+  state 279367: 10_20 8h00_8h10 arrivee_claire bob_marche_voit univ_alice
+  -to2->
+  state 279368: 10_20 8h10_8h20 arrivee_claire bob_marche_voit univ_alice
+  -td1->
+  state 279369: 8h10_8h20 arrivee_claire bob_marche_voit univ_alice
+  -tc6->
+  state 279370: 8h10_8h20 bob_marche_voit univ_alice univ_claire
+  -tb3->
+  state 279371: 8h10_8h20 arrivee_bob univ_alice univ_claire
+  -tb7->
+  state 279372: 8h10_8h20 univ_alice univ_bob univ_claire
+  -to3->
+  state 279373: L.div L.dead univ_alice univ_bob univ_claire
+  -L.deadlock->
+  state 279374: L.div L.dead univ_alice univ_bob univ_claire
+  [accepting all]
+2.062s
+
+-

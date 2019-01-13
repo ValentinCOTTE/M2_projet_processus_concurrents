@@ -1,0 +1,51 @@
+Selt version 3.4.4 -- 01/05/16 -- LAAS/CNRS
+ktz loaded, 243482 states, 709688 transitions
+0.312s
+
+- -(<>(depart_alice /\ 7h50_8h00) /\ <>(arrivee_bob /\ 8h10_8h20) /\ <>(depart_claire /\ 10_20) /\ <>(univ_alice /\ univ_bob /\ univ_claire));
+FALSE
+  state 0: 0h00_7h50 alice_maison bob_maison claire_maison
+  -tb0->
+  state 53936: { bob_parti} 0h00_7h50 alice_maison claire_maison depart_bob
+  -tb1->
+  state 53937: { bob_parti} 0h00_7h50 alice_maison bob_voiture claire_maison
+  -ta0->
+  state 53938: { bob_parti} 0h00_7h50 alice_partie bob_voiture claire_maison depart_alice
+  -to0->
+  state 103980: { bob_parti} 7h50_8h00 alice_partie bob_voiture claire_maison depart_alice
+  -ta1->
+  state 104418: { bob_parti} 7h50_8h00 alice_partie alice_train bob_voiture claire_maison
+  -to1->
+  state 104419: { bob_parti} 8h00_8h10 alice_partie alice_train bob_voiture claire_maison
+  -tc0->
+  state 104420: { bob_parti} 8h00_8h10 alice_partie alice_train bob_voiture depart_claire
+  -tb2->
+  state 104421: { bob_parti} 8h00_8h10 alice_partie alice_train bob_marche_voit depart_claire
+  -td0->
+  state 104422: 10_20 8h00_8h10 alice_train bob_marche_voit depart_claire
+  -tc1->
+  state 104518: 10_20 8h00_8h10 alice_train bob_marche_voit claire_pied
+  -to2->
+  state 104519: 10_20 8h10_8h20 alice_train bob_marche_voit claire_pied
+  -ta2->
+  state 104520: 10_20 8h10_8h20 arrivee_alice bob_marche_voit claire_pied
+  -td1->
+  state 104521: 8h10_8h20 arrivee_alice bob_marche_voit claire_pied
+  -ta6->
+  state 104522: 8h10_8h20 bob_marche_voit claire_pied univ_alice
+  -tb3->
+  state 104523: 8h10_8h20 arrivee_bob claire_pied univ_alice
+  -tb7->
+  state 104524: 8h10_8h20 claire_pied univ_alice univ_bob
+  -to3->
+  state 104525: claire_pied univ_alice univ_bob
+  -tc2->
+  state 104526: arrivee_claire univ_alice univ_bob
+  -tc6->
+  state 104527: L.div L.dead univ_alice univ_bob univ_claire
+  -L.deadlock->
+  state 104528: L.div L.dead univ_alice univ_bob univ_claire
+  [accepting all]
+0.641s
+
+-
